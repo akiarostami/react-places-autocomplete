@@ -201,6 +201,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	
 	    _this.handleSelect = function (suggestion) {
+	      console.log(suggestion);
 	      if (_this.props.closeOnSelect) {
 	        _this.clearSuggestions();
 	      }
