@@ -200,14 +200,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	      });
 	    };
 	
-	    _this.handleSelect = function (address, placeId) {
+	    _this.handleSelect = function (suggestion) {
 	      if (_this.props.closeOnSelect) {
 	        _this.clearSuggestions();
 	      }
 	      if (_this.props.onSelect) {
-	        _this.props.onSelect(address, placeId);
+	        _this.props.onSelect(suggestion);
 	      } else {
-	        _this.props.onChange(address);
+	        _this.props.onChange(suggestion.description);
 	      }
 	    };
 	
@@ -232,10 +232,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	    _this.handleEnterKey = function () {
 	      var activeSuggestion = _this.getActiveSuggestion();
-	      if (activeSuggestion === undefined) {
-	        _this.handleSelect(_this.props.value, null);
-	      } else {
-	        _this.handleSelect(activeSuggestion.description, activeSuggestion.placeId);
+	      if (activeSuggestion !== undefined) {
+	        _this.handleSelect(activeSuggestion);
 	      }
 	    };
 	
@@ -410,10 +408,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      if (event && event.preventDefault) {
 	        event.preventDefault();
 	      }
-	      var description = suggestion.description,
-	          placeId = suggestion.placeId;
-	
-	      _this.handleSelect(description, placeId);
+	      _this.handleSelect(suggestion);
 	      setTimeout(function () {
 	        _this.mousedownOnSuggestion = false;
 	      });
