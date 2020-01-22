@@ -201,6 +201,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	
 	    _this.handleSelect = function (address, placeId) {
+	      if (_this.props.closeOnSelect) {
+	        _this.clearSuggestions();
+	      }
 	      if (_this.props.onSelect) {
 	        _this.props.onSelect(address, placeId);
 	      } else {
@@ -471,6 +474,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  children: _propTypes2.default.func.isRequired,
 	  onError: _propTypes2.default.func,
 	  onSelect: _propTypes2.default.func,
+	  closeOnSelect: _propTypes2.default.bool,
 	  searchOptions: _propTypes2.default.shape({
 	    bounds: _propTypes2.default.object,
 	    componentRestrictions: _propTypes2.default.object,
@@ -492,6 +496,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  /* eslint-enable no-unused-vars, no-console */
 	  searchOptions: {},
+	  closeOnSelect: true,
 	  debounce: 200,
 	  highlightFirstSuggestion: false,
 	  shouldFetchSuggestions: true

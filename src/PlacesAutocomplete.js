@@ -126,6 +126,9 @@ class PlacesAutocomplete extends React.Component {
   };
 
   handleSelect = (address, placeId) => {
+    if (this.props.closeOnSelect) {
+      this.clearSuggestions();
+    }
     if (this.props.onSelect) {
       this.props.onSelect(address, placeId);
     } else {
@@ -368,6 +371,7 @@ PlacesAutocomplete.propTypes = {
   children: PropTypes.func.isRequired,
   onError: PropTypes.func,
   onSelect: PropTypes.func,
+  closeOnSelect: PropTypes.bool,
   searchOptions: PropTypes.shape({
     bounds: PropTypes.object,
     componentRestrictions: PropTypes.object,
@@ -391,6 +395,7 @@ PlacesAutocomplete.defaultProps = {
     ),
   /* eslint-enable no-unused-vars, no-console */
   searchOptions: {},
+  closeOnSelect: true,
   debounce: 200,
   highlightFirstSuggestion: false,
   shouldFetchSuggestions: true,
