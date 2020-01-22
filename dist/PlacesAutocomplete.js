@@ -194,6 +194,7 @@ var PlacesAutocomplete = function (_React$Component) {
       switch (event.key) {
         case 'Enter':
           event.preventDefault();
+          event.stopPropagation();
           _this.handleEnterKey();
           break;
         case 'ArrowDown':

@@ -274,6 +274,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      switch (event.key) {
 	        case 'Enter':
 	          event.preventDefault();
+	          event.stopPropagation();
 	          _this.handleEnterKey();
 	          break;
 	        case 'ArrowDown':

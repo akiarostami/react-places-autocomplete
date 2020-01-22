@@ -197,6 +197,7 @@ class PlacesAutocomplete extends React.Component {
     switch (event.key) {
       case 'Enter':
         event.preventDefault();
+        event.stopPropagation();
         this.handleEnterKey();
         break;
       case 'ArrowDown':
