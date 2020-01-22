@@ -1,8 +1,8 @@
 /*
-* Copyright (c) 2016-present, Ken Hibino.
-* Licensed under the MIT License (MIT).
-* See https://kenny-hibino.github.io/react-places-autocomplete
-*/
+ * Copyright (c) 2016-present, Ken Hibino.
+ * Licensed under the MIT License (MIT).
+ * See https://kenny-hibino.github.io/react-places-autocomplete
+ */
 
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -126,7 +126,6 @@ class PlacesAutocomplete extends React.Component {
   };
 
   handleSelect = (address, placeId) => {
-    this.clearSuggestions();
     if (this.props.onSelect) {
       this.props.onSelect(address, placeId);
     } else {
