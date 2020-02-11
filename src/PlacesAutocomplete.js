@@ -126,7 +126,7 @@ class PlacesAutocomplete extends React.Component {
   };
 
   handleSelect = suggestion => {
-    console.log(suggestion);
+    //console.log(suggestion);
     if (this.props.closeOnSelect) {
       this.clearSuggestions();
     }
